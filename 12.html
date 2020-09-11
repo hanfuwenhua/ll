@@ -2,10 +2,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>test2</title>
+<title>婚礼</title>
+	<script>
+        window.onload=function(){
+            var story = document.getElementById('word');
+            var s = document.getElementById('show');
+            var i = 0;
+            timer=setInterval(function(){
+                s.innerHTML=story.innerHTML.substring(0,i);
+                i++;
+                if(s.innerHTML==story.innerHTML){
+                    clearInterval(timer);
+                }
+            },200);
+        }
+    </script>
 <style type="text/css">
+	body{
+		height: 600px;
+	    width: 1000px;
+		margin: 0 auto;
+	}
 	.body {
-	background-image:url(picture1/d1.png);
+	background-image:url(picture1/p8.jpg);
 	background-size:cover;
 	background-repeat: no-repeat;
 	height: 600px;
@@ -28,14 +47,35 @@
 }
 	.a{
 		width: 400px;
-		color:red;
+		display:none;
 	   font-size:1.2em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
 		top: 50%;
 	    left: 65%;
-		
+		background: -webkit-linear-gradient(left,
+            #ffffff,
+            #ff00ff 6.25%,
+            #00ffff 12.5%,
+            #0000ff 18.75%,
+            #ff00ff 25%,
+            #00ffff 31.25%,
+            #0000ff 37.5%,
+            #ff00ff 43.75%,
+            #00ffff 50%,
+            #0000ff 56.25%,
+            #ff00ff 62.5%,
+            #00ffff 68.75%,
+            #ff00ff 75%,
+            #00ffff 81.25%,
+            #0000ff 87.5%,
+            #ff00ff 93.75%,
+            #ff00ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        animation: masked-animation 2s infinite linear;
 	}
 	.d{
 		position: absolute;
@@ -48,21 +88,51 @@
 		top:60%;
 	    left: 33%;
 		width: 50px;
-		color:aliceblue;
+		color:antiquewhite;
+	   font-size:50px;
+	   float:right;
+	   vartical-align:vertical-rl;
+		font-family: STXingkai;
+       text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9);  
+	}
+	.e:hover { font-size: 55px; }
+	.f{
+		position: absolute;
 	   font-size:3em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
+		top: 65%;
+	    left: 90%;
+		 text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
 	}
-	.f{
+	.f:hover { font-size: 55px; }
+	.h{
 		position: absolute;
-	   font-size:1.5em;
+	   font-size:3em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
-		top: 140%;
-	    left: 60%;
+		top: 65%;
+	    left: 10%;
+		 text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
 	}
+	.h:hover { font-size: 55px; }
 	a{
 		text-decoration: none;
 		color:antiquewhite;
@@ -74,6 +144,14 @@
 		top: -15%;
 		left: -5%;
 	}
+	@keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100%, 0;
+        }
+    }
 </style>
 </head>
 
@@ -82,16 +160,20 @@
  <div class="d">
 	    <div class="e">
  	    婚<br>礼</div>
-	 	<img src="picture1/d2.png" width="160" height="400"/>
+	 	<img src="picture1/p11.png" width="160" height="400"/>
 	 </div>
-  <div class="verticallines"><p class="a">婚礼是嘉礼之一。唐宋制度，男方四品以上以冕服婚，九品以上以爵弁服婚，庶人以绛公服婚。女方以礼衣或连裳嫁。</p>
-  <img  class="g" src="图片30.png"/>
-	  <div class="f"><a href="9.html">
-	  回返</a>
+  <div class="verticallines">
+	  <p class="a" id="word">婚礼是嘉礼之一。唐宋制度，男方四品以上以冕服婚，九品以上以爵弁服婚，庶人以绛公服婚。女方以礼衣或连裳嫁。</p>
+	  <p id="show"></p>
+  <img  class="g" src="picture1/p10.png"/>
 	  </div>
-	  </div>
-	  <div style="margin: 0 auto;width: 350px;height: 400px;border: 0px solid;position: relative;top: 32%; left: -15%">
-			<img src="picture1/d9.png" width="350" height="400" />
+	<div class="f" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:1%"><a href="19.html">》</a></div>
+	  <div class="h" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:-80%"><a href="9.html">《</a></div>
+	  <div style="margin: 0 auto;width: 200px;height: 270px;border: 0px solid;position: relative;top: 0%; left: 39.7%">
+			<img src="picture1/p9.png" width="200" height="270" />
+	   </div>
+	<div style="margin: 0 auto;width: 230px;height: 350px;border: 0px solid;position: relative;top: -25%; left: -5%">
+			<img src="picture1/p12.png" width="230" height="350" />
 	   </div>
 	  </div>
 </body>

@@ -2,10 +2,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>test2</title>
+<title>冠礼</title>
+	<script>
+        window.onload=function(){
+            var story = document.getElementById('word');
+            var s = document.getElementById('show');
+            var i = 0;
+            timer=setInterval(function(){
+                s.innerHTML=story.innerHTML.substring(0,i);
+                i++;
+                if(s.innerHTML==story.innerHTML){
+                    clearInterval(timer);
+                }
+            },200);
+        }
+    </script>
 <style type="text/css">
+	body{
+		height: 600px;
+	    width: 1000px;
+		margin: 0 auto;
+	}
 	.body {
-	background-image:url("picture1/d1.png");
+	background-image:url(picture1/p8.jpg);
 	background-size:cover;
 	background-repeat: no-repeat;
 	height: 600px;
@@ -28,13 +47,14 @@
 }
 	.a{
 		width: 400px;
-		color:red;
 	   font-size:1.2em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
 		top: 50%;
 	    left: 65%;
+		display:none;
+		color: red;
 	}
 	.d{
 		position: absolute;
@@ -47,21 +67,52 @@
 		top:60%;
 	    left: 33%;
 		width: 50px;
-		color:aliceblue;
+		color:antiquewhite;
+	   font-size:50px;
+	   float:right;
+	   vartical-align:vertical-rl;
+		font-family: STXingkai;
+		text-shadow: 
+		 0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
+		
+	}
+	.e:hover { font-size: 55px; }
+	.f{
+		position: absolute;
 	   font-size:3em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
+		top: 65%;
+	    left: 90%;
+		 text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
 	}
-	.f{
+	.f:hover { font-size: 55px; }
+	.h{
 		position: absolute;
-	   font-size:1.5em;
+	   font-size:3em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
-		top: 140%;
-	    left: 60%;
+		top: 65%;
+	    left: 10%;
+		 text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
 	}
+	.h:hover { font-size: 55px; }
 	a{
 		text-decoration: none;
 		color:antiquewhite;
@@ -73,6 +124,14 @@
 		top: -15%;
 		left: -2%;
 	}
+	@keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100%, 0;
+        }
+    }
 </style>
 </head>
 
@@ -80,19 +139,20 @@
 <div class="body">
  <div class="d">
 	    <div class="e">
- 	    <a href="17.html">冠<br>礼</a></div>
-	 	<img src="picture1/d2.png" width="160" height="400"/>
+ 	    冠<br>礼
+	 </div>
+	 	<img src="picture1/p11.png" width="160" height="400"/>
 	 </div>
   <div class="verticallines">
-  <p class="a">冠礼是华夏礼仪制度之首，又称成人礼。是对汉人进行礼教的开始。周朝士大夫年及二十行冠礼，王公年及十五而冠。《礼记·冠义》曰:"已冠而志之，成人之道也"。士大夫三加，三公诸侯四加。</p>
-  <img  class="g" src="图片30.png"/>
-	  <div class="f"><a href="9.html">
-	  回返</a>
+  <p class="a" id="word">冠礼是华夏礼仪制度之首，又称成人礼。周朝士大夫年及二十行冠礼，王公年及十五而冠。《礼记·冠义》曰:"已冠而志之，成人之道也"。士大夫三加，三公诸侯四加。冠礼是"以成人之礼来要求人的礼仪"。儒家将冠礼定位于"礼仪之始"，给了它极高的文化地位。</p>
+	  <p id="show"></p>
+  <img  class="g" src="picture1/p10.png"/>
 	  </div>
-	  </div>
-	  <div style="margin: 0 auto;width: 350px;height: 400px;border: 0px solid;position: relative;top: 32%; left: -15%">
-			<img src="picture1/d5.png" width="350" height="400" />
+	  <div class="f" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:1%"><a href="15.html">》</a></div>
+	  <div class="h" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:-80%"><a href="9.html">《</a></div>
+	<div style="margin: 0 auto;width: 200px;height: 270px;border: 0px solid;position: relative;top: 0%; left: 39.7%">
+			<img src="picture1/p9.png" width="200" height="270" />
 	   </div>
-	</div>
+	  </div>
 </body>
 </html>

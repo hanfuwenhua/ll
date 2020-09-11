@@ -1,106 +1,144 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html style="height:600px;">
 <head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-	<style>
-		#main{
-			width: 500px;
-			height: 500px;
-			margin: 0 auto;
-		}
-		ul{
-			width: 450px;
-			height: 450px;
-			float: left;
-			margin: 5px;
-			padding: 0px;
-			list-style-type: none;
-			background-color: blanchedalmond;
-		}
-		li {
-			float: left;
-		}
-		#success {
-			display: none;
-			text-align: center;
-		}
-	</style>
-</head>
+    <meta charset="UTF-8">
+    <title>士大夫加冠汉服</title>
+    <style>
+		body{
+		height: 600px;
+	    width: 1000px;
+		margin: 0 auto;
+	}
+		.body {
+	background-image:url("picture1/p13.jpg");
+	background-size:cover;
+	background-repeat: no-repeat;
+	height: 600px;
+	width: 1000px;
+	margin: 0 auto;
+}
+        .biaoti{
+            font-family: STXingkai;
+            font-size: 38px;
+            border-bottom:1px dashed #CCCCCC;
+            color: #A78C52;
 
+        }
+
+        .btgn{
+            font-family: STXingkai;
+            font-size: 19px;
+            color:#A78C52;
+            text-align: center;
+        }
+		.b{
+			position: absolute;
+			top: 50%;
+		}
+	.h{
+		position: absolute;
+	   font-size:3em;
+	   float:right;
+	   vartical-align:vertical-rl;
+		font-family: STXingkai;
+		top: 65%;
+	    left: 10%;
+		 text-shadow:  
+        0px 1px 0px #c0c0c0,  
+    	0px 2px 0px #b0b0b0,  
+    	0px 3px 0px #a0a0a0,  
+    	0px 4px 0px #909090,  
+    	0px 5px 10px rgba(0, 0, 0, .9); 
+	}
+	.h:hover { font-size: 55px; }
+	a{
+		text-decoration: none;
+		color:antiquewhite;
+	}
+    </style>
+</head>
 <body>
-	<div id="main">
-		<ul id="begin">
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/2.jpg" alt="" width="150px" height="150px" draggable="true" id="drag1" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/5.jpg" alt="" width="150px" height="150px" draggable="true" id="drag2" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/9.jpg" alt="" width="150px" height="150px" draggable="true" id="drag3" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/1.jpg" alt="" width="150px" height="150px" draggable="true" id="drag4" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/6.jpg" alt="" width="150px" height="150px" draggable="true" id="drag5" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/3.jpg" alt="" width="150px" height="150px" draggable="true" id="drag6" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/8.jpg" alt="" width="150px" height="150px" draggable="true" id="drag7" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/4.jpg" alt="" width="150px" height="150px" draggable="true" id="drag8" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-			<li ondrop="drop(event)" ondragover="dropOver(event)">
-				<img src="picture1/7.jpg" alt="" width="150px" height="150px" draggable="true" id="drag9" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
-			</li>
-		</ul>
-	</div>
-	<p id="success">恭喜您 拼图成功！</p>
-	<script>
-		var start_index;
-		var end_index;
-		function dragStart(event) {
-			console.log("dragStart: " + event.target.id);
-			start_index = event.target.id;
-		}
-		function dragEnd(event) {
-			event.preventDefault();
-		}
-		function dropOver(event) {
-			event.preventDefault();
-		}
-		function drop(event) {
-			event.preventDefault();
-			console.log("drop: "+event.target.id);
-			end_index = event.target.id;
-			exchange(start_index, end_index, "src");
-			check();
-		}
-		// 交换id1和id2两个元素的attri属性值
-		function exchange(id1, id2, attri){
-			ele1 = document.getElementById(id1);
-			ele2 = document.getElementById(id2);
-			var tmp_attri = ele1.getAttribute(attri);
-			ele1.setAttribute(attri, ele2.getAttribute(attri));
-			ele2.setAttribute(attri, tmp_attri);			
-		}
-		function check(){
-			var img_list = document.getElementsByTagName("img");
-			var img_src,dot_index,img_index;
-			for(var i=0; i<9; i++){
-				img_src = img_list[i].getAttribute("src");
-				dot_index = img_src.lastIndexOf(".");
-				img_index = Number(img_src.slice(dot_index - 2, dot_index));
-				if (img_index != i+1) return false;
-			}
-			var success = document.getElementById("success");
-			success.style.display = "block";
-		}
-	</script>
+   <div class="body">
+	   <div style=" width: 700px;height: 420px;margin: 0 auto;border: 0px solid;position: relative;top:6%; left: 14%">
+    <table width="60%" border="0" align="center">
+        <tr>
+            <td align="center" class="biaoti" height="60">士大夫三套加官汉服</td>
+        </tr>
+    </table>
+
+    <table width="70%" height="316" border="2" cellpadding="4" cellspacing="1" align="center">
+        <tr>
+            <td width="44" height="20" class="btgn">&nbsp;</td>
+            <td width="29" class="btgn"> 意义</td>
+            <td width="29" class="btgn"> 服名</td>
+            <td width="38" class="btgn"> 首服</td>
+             <td width="30" class="btgn"> 上衣</td>
+            <td colspan="2" class="btgn"> 下裳 </td>
+             <td width="16" rowspan="1" class="btgn"> 带</td>
+            <td width="32" class="btgn"> 蔽膝</td>
+             <td width="33" class="btgn"> 足服</td>
+              <td width="160" class="btgn"> 足服装饰</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3" class="btgn">始冠</td>
+            <td rowspan="3" class="btgn">朝服</td>
+            <td rowspan="3" class="btgn"> 冠牟</td>
+            <td rowspan="3" class="btgn"> 玄冠（缁布冠）</td>
+            <td rowspan="3" class="btgn">玄端</td>
+            <td width="31" height="18" class="btgn">上士 </td>
+            <td width="60" class="btgn">玄裳 </td>
+            <td rowspan="3" class="btgn">缁色麻布带</td>
+            <td rowspan="3" class="btgn">雀头色</td>
+            <td rowspan="3" class="btgn">黑屦</td>
+            <td rowspan="3" class="btgn">青色</td>
+        </tr>
+        <tr>
+            <td height="18" class="btgn">中士 </td>
+            <td width="94" class="btgn">黄裳 </td>
+        </tr>
+
+        <tr>
+            <td height="18" class="btgn">下士 </td>
+            <td class="btgn">杂色裳 </td>
+        </tr>
+
+        <tr>
+          <td height="71" class="btgn"> 再加</td>
+          <td class="btgn">视朔之服 </td>
+          <td class="btgn">皮牟 </td>
+          <td class="btgn">皮牟冠 </td>
+          <td class="btgn">缁麻衣</td>
+          <td colspan="2" class="btgn">白素裳</td>
+          <td class="btgn">缁色麻布 </td>
+          <td class="btgn">素带 </td>
+          <td class="btgn">白屦 </td>
+          <td width="85" class="btgn">缁色 </td>
+        </tr>
+        <tr>
+            <td height="104" class="btgn">三加 </td>
+            <td class="btgn">祭服</td>
+            <td class="btgn">爵弁</td>
+            <td class="btgn">爵弁冠</td>
+            <td class="btgn">玄衣</td>
+            <td colspan="2" class="btgn">纁裳</td>
+            <td class="btgn">缁色熟绢</td>
+            <td class="btgn">雀头色熟牛皮</td>
+            <td class="btgn">纁屦</td>
+			<td class="btgn">黑色</td>
+        </tr>
+    </table>
+		   </div>
+	   <div style="margin: 0 auto;width: 100px;height: 90px;border: 0px solid;position: relative;top: -58%; left: -35%" class="div">
+			<img src="picture1/p14.png" width="250" height="140" />
+	   </div>
+	<div style="margin: 0 auto;width: 100px;height: 90px;border: 0px solid;position: relative;top: -48%; left: -35%" class="div">
+			<img src="picture1/p14.png" width="250" height="140" />
+	   </div>
+	<div style="margin: 0 auto;width: 100px;height: 90px;border: 0px solid;position: relative;top: -38%; left: -35%" class="div">
+			<img src="picture1/p14.png" width="250" height="140" />
+	   </div>
+	  <div class="h" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: -30%; left:-90%"><a href="10.html">《</a></div>
+    </div>
 </body>
 </html>
