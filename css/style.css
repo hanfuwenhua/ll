@@ -1,6 +1,9 @@
 body {	
 		width: 100%;
 		height: 100%;	
+		width:1000px; 
+		height:600px; 
+		margin:0 auto; 
 	}
 	.g1{
 		margin:0 auto; 

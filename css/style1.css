@@ -50,7 +50,7 @@ h1 {
   padding: 10% 5% 5%;
   box-sizing: border-box;
   backface-visibility: hidden;
- background-color: #C7B0B0;
+ background-color: lightgoldenrodyellow;
 }
 .back {
   transform: rotateY(180deg);
