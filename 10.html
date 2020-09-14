@@ -3,20 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>冠礼</title>
-	<script>
-        window.onload=function(){
-            var story = document.getElementById('word');
-            var s = document.getElementById('show');
-            var i = 0;
-            timer=setInterval(function(){
-                s.innerHTML=story.innerHTML.substring(0,i);
-                i++;
-                if(s.innerHTML==story.innerHTML){
-                    clearInterval(timer);
-                }
-            },200);
-        }
-    </script>
 <style type="text/css">
 	body{
 		height: 600px;
@@ -47,14 +33,14 @@
 }
 	.a{
 		width: 400px;
-	   font-size:1.2em;
+	   font-size:1.05em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
 		top: 50%;
 	    left: 65%;
-		display:none;
-		color: red;
+		color: antiquewhite;
+		line-height:1.5em;
 	}
 	.d{
 		position: absolute;
@@ -124,14 +110,6 @@
 		top: -15%;
 		left: -2%;
 	}
-	@keyframes masked-animation {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: -100%, 0;
-        }
-    }
 </style>
 </head>
 
@@ -144,8 +122,7 @@
 	 	<img src="picture1/p11.png" width="160" height="400"/>
 	 </div>
   <div class="verticallines">
-  <p class="a" id="word">冠礼是华夏礼仪制度之首，又称成人礼。周朝士大夫年及二十行冠礼，王公年及十五而冠。《礼记·冠义》曰:"已冠而志之，成人之道也"。士大夫三加，三公诸侯四加。冠礼是"以成人之礼来要求人的礼仪"。儒家将冠礼定位于"礼仪之始"，给了它极高的文化地位。</p>
-	  <p id="show"></p>
+  <p class="a">冠礼是华夏礼仪制度之首，又称成人礼。周朝士大夫年及二十行冠礼，王公年及十五而冠。《礼记·冠义》曰:"已冠而志之，成人之道也"。士大夫三加，三公诸侯四加。冠礼是"以成人之礼来要求人的礼仪"。儒家将冠礼定位于"礼仪之始"，给了它极高的文化地位。</p>
   <img  class="g" src="picture1/p10.png"/>
 	  </div>
 	  <div class="f" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:1%"><a href="15.html">》</a></div>

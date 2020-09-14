@@ -3,20 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>婚礼</title>
-	<script>
-        window.onload=function(){
-            var story = document.getElementById('word');
-            var s = document.getElementById('show');
-            var i = 0;
-            timer=setInterval(function(){
-                s.innerHTML=story.innerHTML.substring(0,i);
-                i++;
-                if(s.innerHTML==story.innerHTML){
-                    clearInterval(timer);
-                }
-            },200);
-        }
-    </script>
 <style type="text/css">
 	body{
 		height: 600px;
@@ -47,35 +33,14 @@
 }
 	.a{
 		width: 400px;
-		display:none;
 	   font-size:1.2em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
 		top: 50%;
 	    left: 65%;
-		background: -webkit-linear-gradient(left,
-            #ffffff,
-            #ff00ff 6.25%,
-            #00ffff 12.5%,
-            #0000ff 18.75%,
-            #ff00ff 25%,
-            #00ffff 31.25%,
-            #0000ff 37.5%,
-            #ff00ff 43.75%,
-            #00ffff 50%,
-            #0000ff 56.25%,
-            #ff00ff 62.5%,
-            #00ffff 68.75%,
-            #ff00ff 75%,
-            #00ffff 81.25%,
-            #0000ff 87.5%,
-            #ff00ff 93.75%,
-            #ff00ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        animation: masked-animation 2s infinite linear;
+		color: antiquewhite;
+		line-height:1.5em;
 	}
 	.d{
 		position: absolute;
@@ -144,14 +109,6 @@
 		top: -15%;
 		left: -5%;
 	}
-	@keyframes masked-animation {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: -100%, 0;
-        }
-    }
 </style>
 </head>
 
@@ -163,8 +120,7 @@
 	 	<img src="picture1/p11.png" width="160" height="400"/>
 	 </div>
   <div class="verticallines">
-	  <p class="a" id="word">婚礼是嘉礼之一。唐宋制度，男方四品以上以冕服婚，九品以上以爵弁服婚，庶人以绛公服婚。女方以礼衣或连裳嫁。</p>
-	  <p id="show"></p>
+	  <p class="a">婚礼是嘉礼之一。唐宋制度，男方四品以上以冕服婚，九品以上以爵弁服婚，庶人以绛公服婚。女方以礼衣或连裳嫁。</p>
   <img  class="g" src="picture1/p10.png"/>
 	  </div>
 	<div class="f" style="margin: 0 auto;width: 80px;height: 80px;border: 0px solid;position: relative;top: 85%; left:1%"><a href="19.html">》</a></div>

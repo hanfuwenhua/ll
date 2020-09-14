@@ -24,45 +24,23 @@
 	margin:4em;
 	padding:0em;
 	font-size:1.5em;
-	writing-mode:tb-rl;  
-	-webkit-writing-mode:vertical-rl;
-	align-content: center;
+	writing-mode:tb-rl;  /*垂直方向自右而左的书写方式*/
+	-webkit-writing-mode:vertical-rl; /*垂直方向自右而左的书写方式*/
+	align-content: center; /*元素位于容器中心*/
 	margin:0 auto;
 	top: 15%;
 		left: 40%;
 }
 	.a{
-		width: 460px;
-		color:red;
-	   font-size:1.15em;
+		width: 400px;
+	   font-size:1.04em;
 	   float:right;
 	   vartical-align:vertical-rl;
 		font-family: STXingkai;
 		top: 50%;
 	    left: 65%;
-		background: -webkit-linear-gradient(left,
-            #0000ff,
-            #0000ff 6.25%,
-            #00ffff 12.5%,
-            #0000ff 18.75%,
-            #00ffff 25%,
-            #0000ff 31.25%,
-            #00ffff 37.5%,
-            #0000ff 31.25%,
-            #00ffff 50%,
-            #0000ff 31.25%,
-            #00ffff 62.5%,
-            #0000ff 31.25%,
-            #00ffff 75%,
-            #0000ff 31.25%,
-            #00ffff 87.5%,
-            #0000ff 31.25%,
-            #00ffff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        animation: masked-animation 2s infinite linear;
-		
+		color: antiquewhite;
+		line-height:1.5em;
 	}
 	.d{
 		position: absolute;
@@ -131,14 +109,6 @@
 		top: -15%;
 		left: -5%;
 	}
-	@keyframes masked-animation {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: -100%, 0;
-        }
-    }
 </style>
 </head>
 
